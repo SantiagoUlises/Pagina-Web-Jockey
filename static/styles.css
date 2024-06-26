@@ -28,10 +28,15 @@ body {
 }
 
 .alfiles img{
-    height: auto;
+    height: 60px;
     width: auto;
 }
-header {
+
+.cesap img{
+    height: 60px;
+    width: auto;
+}
+.container {
     background-color: #001f4d;
     color: white;
     padding: 10px 20px;
@@ -40,7 +45,7 @@ header {
     align-items: center;
 }
 
-header h1 {
+.container {
     margin: 0;
 }
 nav ul {
@@ -108,4 +113,41 @@ form button {
 
 form button:hover {
     background-color: #218838;
+}
+
+.containerNavbar{
+    background-color: #043b8d;
+    color: white;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 5px 60px;
+    height: 50px;
+    
+    align-items: center;
+    font-weight: 600;
+}
+
+.top-bar{
+    background-color: #043b8d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 60px;
+    align-items: center;
+}
+.top-bar .fecha{
+    color: white;
+    font-weight: 600;
+}
+.top-bar .links{
+    display: flex;
+    align-items: center;
+}
+.top-bar .links a{
+    display: inline-block;
+    margin-left: 10px;
 }
