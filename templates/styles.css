@@ -26,6 +26,11 @@ body {
     height: auto;
     margin: 0;
 }
+
+.alfiles img{
+    height: auto;
+    width: auto;
+}
 header {
     background-color: #001f4d;
     color: white;

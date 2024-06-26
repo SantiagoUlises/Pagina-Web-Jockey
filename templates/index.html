@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociación de Hockey de San Juan Sob</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+                <img src="/static/imagen/fondo1-removebg-preview.png" alt="Hockey Logo">
+                <h1>Asociación Sanjuanina de hockey sobre cesped y pista</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Agenda.html">Agenda</a></li>
+                    <li><a href="Posiciones.html">Posiciones</a></li>
+                    <li><a href="Noticias.html">Noticias</a></li>
+                    <li><a href="Galerias.html">Galerías</a></li>
+                    <li><a href="login.html">Ingreso</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="autoplay" data-slick='{"slidesToShow": 8, "slidesToScroll": 2}'>
+        <div><img src="/static/equipos/caucete-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/barreal-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/descarga.png" alt=""></div>
+        <div><img src="/static/equipos/CESAP.jpg" alt=""></div>
+        <div><img src="/static/equipos/cooperativa-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/huazihul-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/jockey-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/U-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/lomas-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/richet_zapata-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/san_juan_rugby_club-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/udap-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/Universitario_-removebg-preview.png" alt=""></div>
+        <div><img src="/static/equipos/uvt-removebg-preview.png" alt=""></div>
+        <div class="alfiles">
+            <div><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/templates/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.autoplay').slick({
+                slidesToShow: 8,
+                slidesToScroll: 2,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                variableWidth: true,
+                infinity: true
+            });
+        });
+    </script>
+</body>
+</html>
