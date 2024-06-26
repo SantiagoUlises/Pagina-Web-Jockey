@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión de Equipos - Asociación de Hockey de San Juan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Asociación de Hockey de San Juan</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Institucional</a></li>
+                <li><a href="#">Agenda</a></li>
+                <li><a href="#">Posiciones</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Galerías</a></li>
+                <li><a href="login-equipos.html">Equipos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="login-container">
+            <form action="login.php" method="post">
+                <h2>Iniciar Sesión</h2>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

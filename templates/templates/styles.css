@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.autoplay{
+    display:flex;
+    justify-content: center;
+    border: 2px solid #001f4d;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.autoplay div{
+    width: auto;
+    height: 70px;
+    margin: 0 5px; 
+    background-color: #ffffff;
+    border-color: #001f4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.autoplay img{
+    max-width: 70px    ; 
+    height: auto;
+    margin: 0;
+}
+header {
+    background-color: #001f4d;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: 4px;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.container h1{
+    margin:0;
+}
+
+.login-container {
+    max-width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
