@@ -151,3 +151,7 @@ form button:hover {
     display: inline-block;
     margin-left: 10px;
 }
+.top-bar .links img{
+    height: auto;
+    width: auto;
+}

@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="top-bar">
-            <div class="fecha"></div>
+            <div class="fecha" id="fecha"></div>
             <div class="links">
                 <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey"><img src="../static/imagen/face.png"></a>
                 <a href="https://www.instagram.com/asoc.sanjuaninadehockey"><img src="../static/imagen/instagram-removebg-preview.png"></a>
@@ -68,6 +68,6 @@
             });
         });
     </script>
-    <script src="../Addons/funcionDate.js"></script>
+    <script src="{{url_for('static',filename='js/funcionDate.js')}}"></script>
 </body>
 </html>
