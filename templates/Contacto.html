@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asociación de Hockey de San Juan sobre césped y pista</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='js/slick/slick.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='js/slick/slick-theme.css')}}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,16 +38,16 @@
         </div>
     </header>
     <div class="container">
-        <img src="/static/imagen/fondo1-removebg-preview.png" alt="Hockey Logo">
+        <img src="{{url_for('static',filename='/imagen/fondo1-removebg-preview.png')}}" alt="Hockey Logo">
         <h1>Asociación Sanjuanina de hockey sobre césped y pista</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="Directivos.html">Directivos</a></li>
-                <li><a href="Agenda.html">Agenda</a></li>
-                <li><a href="Galerias.html">Galerías</a></li>
-                <li><a href="Contacto.html">Contacto</a></li>
-                <li><a href="login.html">Ingreso</a></li>
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('directivos') }}">Directivos</a></li>
+                <li><a href="{{ url_for('agenda') }}">Agenda</a></li>
+                <li><a href="{{ url_for('galerias') }}">Galerías</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+                <li><a href="{{ url_for('login') }}">Ingreso</a></li>
             </ul>
         </nav>
     </div>
