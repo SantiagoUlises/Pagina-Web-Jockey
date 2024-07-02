@@ -355,7 +355,7 @@ form button:hover {
 .federacion {
     display: inline-block;
     padding: 10px; /* Espaciado alrededor de la imagen dentro del cuadro */
-    border: 2px solid rgba(0, 0, 0, 0.1); /* Bordes transparentes */
+    border: 2px solid rgba(43, 107, 198, 0.5); /* Bordes transparentes */
     border-radius: 5px; /* Bordes redondeados (opcional) */
     margin-left: 400px;
 }
@@ -365,4 +365,86 @@ form button:hover {
     max-width: 300px; /* Tamaño máximo ajustable */
     height: auto; /* Mantener la proporción de la imagen */
     display: block;
+}
+
+.photo-gallery {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 50px; /* Añade espacio superior si es necesario */
+    padding-bottom: 50px; /* Añade espacio inferior para evitar que se corte */
+}
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.gallery-title, .week-title {
+    background-color: rgba(43, 107, 198, 0.5); /* Semitransparent background */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.gallery-title {
+    font-size: 24px;
+}
+.week-title {
+    font-size: 18px;
+}
+.slick-prev, .slick-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+}
+.slick-prev {
+    left: 10px; /* Ajusta según sea necesario */
+}
+.slick-next {
+    right: 10px; /* Ajusta según sea necesario */
+}
+.slick-prev:hover, .slick-next:hover {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.Contacto{
+    background-color: rgba(43, 107, 198, 0.5); /* Semitransparent background */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+.nro{
+    color: #000;
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+.correo{
+    color: #000;
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.ubi{
+    color: #000;
+    padding: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+.ubi .cuadro{
+    display: flex;
+    justify-content: center;
 }

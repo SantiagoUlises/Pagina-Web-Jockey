@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,7 +16,9 @@ def contacto():
 
 @app.route('/Galerias')
 def galerias():
-    return render_template('Galerias.html')
+    imagen_archivo = os.path.join(app.root_path, 'static/galeria')
+    images = [f'galeria/{image}' for image in os.listdir(imagen_archivo) if image.endswith(('jpg','jpeg','png','gif'))]
+    return render_template('Galerias.html', images=images)
 
 @app.route('/Agenda')
 def agenda():
