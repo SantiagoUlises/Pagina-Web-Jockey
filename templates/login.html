@@ -52,42 +52,49 @@
         </nav>
     </div>
     <div class="autoplay" data-slick='{"slidesToShow": 5, "slidesToScroll": 2}'>
-        <div><img src="/static/equipos/caucete-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/barreal-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/descarga.png" alt=""></div>
+        <div><a href="https://www.instagram.com/cauceterugbyclub/?hl=es-la"><img src="/static/equipos/caucete-removebg-preview.png" alt=""><span class="tooltip">Caucete Rugby Club</span></a></div>
+        <div><a href="https://www.instagram.com/barrealhockeyclub/"><img src="/static/equipos/barreal-removebg-preview.png" alt=""><span class="tooltip">Barreal Hockey Club</span></a></div>
+        <div><a href="https://www.instagram.com/club_amancay/"><img src="/static/equipos/descarga.png" alt=""><span class="tooltip">Club Amancay</span></a></div>
         <div class="cesap">
-            <div><img src="/static/equipos/CESAP.jpg" alt=""></div>
+            <div><a href="https://www.instagram.com/cesap_hockey/"><img src="/static/equipos/CESAP.jpg" alt=""><span class="tooltip">CESAP Hockey Club</span></a></div>
         </div>
-        <div><img src="/static/equipos/cooperativa-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/huazihul-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/jockey-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/U-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/lomas-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/richet_zapata-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/san_juan_rugby_club-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/udap-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/Universitario_-removebg-preview.png" alt=""></div>
-        <div><img src="/static/equipos/uvt-removebg-preview.png" alt=""></div>
+        <div><a href="https://www.instagram.com/cooperativajustocastro/"><img src="/static/equipos/cooperativa-removebg-preview.png" alt=""><span class="tooltip">Cooperativa Justo Castro</span></a></div>
+        <div><a href="https://www.instagram.com/clubhuazihul/"><img src="/static/equipos/huazihul-removebg-preview.png" alt=""><span class="tooltip">Club Huazihul</span></a></div>
+        <div><a href="https://www.instagram.com/jockeysjrc/?hl=es"><img src="/static/equipos/jockey-removebg-preview.png" alt=""><span class="tooltip">Jockey SJ Rugby Club</span></a></div>
+        <div><a href="https://www.facebook.com/unsjrugbyclub/?locale=es_LA"><img src="/static/equipos/U-removebg-preview.png" alt=""><span class="tooltip">Universidad San Juan</span></a></div>
+        <div><a href="https://www.instagram.com/lomas_rivadavia/"><img src="/static/equipos/lomas-removebg-preview.png" alt=""><span class="tooltip">Lomas de Rivadavia</span></a></div>
+        <div><a href="https://www.instagram.com/richetyzapata/"><img src="/static/equipos/richet_zapata-removebg-preview.png" alt=""><span class="tooltip">Richet Zapata</span></a></div>
+        <div><a href="https://sanjuanrugbyclub.wordpress.com/"><img src="/static/equipos/san_juan_rugby_club-removebg-preview.png" alt=""><span class="tooltip">San Juan Rugby Club</span></a></div>
+        <div><a href="https://www.instagram.com/udaphockeyclub_"><img src="/static/equipos/udap-removebg-preview.png" alt=""><span class="tooltip">U.D.A.P. Hockey Club</span></a></div>
+        <div><a href="https://www.instagram.com/universitariohsj/"><img src="/static/equipos/Universitario_-removebg-preview.png" alt=""><span class="tooltip">Universitario Rugby y Hockey Club</span></a></div>
+        <div><a href="http://uvtsj.com/disciplinas/hockey-patines/"><img src="/static/equipos/uvt-removebg-preview.png" alt=""><span class="tooltip">UVT Hockey Club</span></a></div>
         <div class="alfiles">
-            <div><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""></div>
+            <div><a href="https://www.facebook.com/SCAlfiles"><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""><span class="tooltip">Sporting Club Alfiles</span></a></div>
         </div>
     </div>
-
+    <div class="mantenimiento">Pagina en curso...</div>
+    <div class="spinner center">
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+        <div class="spinner-blade"></div>
+    </div>
+    <footer class="bottom-bar">
+        <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
+        <div class="copyright">
+            Copyright © 2024 Asociación Sanjuanina de hockey sobre césped y pista
+        </div>
+    </footer>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static',filename='js/slick/slick.min.js')}}"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.autoplay').slick({
-                slidesToShow: 5,
-                slidesToScroll: 2,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                variableWidth: true,
-                infinity: true
-            });
-        });
-    </script>
     <script src="{{url_for('static',filename='js/funcionDate.js')}}"></script>
 </body>
 </html>
