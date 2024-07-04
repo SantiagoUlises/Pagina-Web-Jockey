@@ -63,6 +63,31 @@ body {
     opacity: 1;
 }
 
+/* Media Queries */
+@media (max-width: 768px){
+    .top-bar{
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+
+    nav ul li{
+        margin: 10px 0;
+    }
+}
+@media(max-width: 480px){
+    h1{
+        font-size: 1.5rem;
+    }
+    .links a{
+        font-size: 0.9rem;
+    }
+    nav ul li a{
+        padding: 5px 10px;
+    }
+}
 
 
 .container {
