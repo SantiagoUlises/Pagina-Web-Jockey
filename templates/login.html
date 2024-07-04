@@ -72,21 +72,13 @@
             <div><a href="https://www.facebook.com/SCAlfiles"><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""><span class="tooltip">Sporting Club Alfiles</span></a></div>
         </div>
     </div>
-    <div class="mantenimiento">Pagina en curso...</div>
-    <div class="spinner center">
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-        <div class="spinner-blade"></div>
-    </div>
+    <form method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
     <footer class="bottom-bar">
         <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
         <div class="copyright">
