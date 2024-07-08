@@ -16,6 +16,8 @@
         <div class="top-bar">
             <div class="fecha" id="fecha"></div>
             <div class="links">
+                <a href="{{ url_for('login') }}" class="login-link">Ingreso</a>
+                <a href="{{ url_for('subir') }}" class="upload">Subir publicaciones</a>
                 <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey">
                     <button class="BtnFace">
                         <span class="svgContainer">
@@ -47,7 +49,6 @@
                 <li><a href="{{ url_for('agenda') }}">Agenda</a></li>
                 <li><a href="{{ url_for('galerias') }}">Galerías</a></li>
                 <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
-                <li><a href="{{ url_for('login') }}">Ingreso</a></li>
             </ul>
         </nav>
     </div>
@@ -73,7 +74,7 @@
         </div>
     </div>
     <div class="Contacto">Contactos</div>
-    <div class="nro">Numero de telefono: +54 9 264 419-6919</div>
+    <div class="nro">Numero de telefono: A confirmar...</div>
     <div class="correo">Correo electronico: infohockey@ashscyp.com.ar</div>
     <div class="ubi">Ubicacion: Lucero Sapini,edith Lilian, Francisco N. Laprida Este 765, J5402 DIO, San Juan
             <div class="cuadro"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1700.3078197885397!2d-68.5155701618793!3d-31.53471497119497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1719934281595!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
@@ -86,7 +87,7 @@
     <div class="bottom-bar">
         <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
         <div class="copyright">
-            Copyright © 2024 Asociación Sanjuanina de hockey sobre césped y pista
+            <p>&copy;Asociación Sanjuanina de hockey sobre césped y pista 2024. Todos los derechos reservados.</p>
         </div>
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

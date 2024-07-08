@@ -4,17 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir Contenido</title>
+    <title>Asociación de Hockey de San Juan sobre césped y pista</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='js/slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='js/slick/slick-theme.css')}}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Subir Fotos y Noticias</h1>
-    <form method="post" enctype="multipart/form-data">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" required>
-        <label for="contenido">Contenido:</label>
-        <textarea id="contenido" name="contenido" required></textarea>
-        <label for="imagen">Imagen:</label>
-        <input type="file" id="imagen" name="imagen" accept="image/*">
-        <button type="submit">Subir</button>
-    </form>
+    <header>
+        <div class="top-bar">
+            <div class="fecha" id="fecha"></div>
+            <div class="links">
+                <a href="{{ url_for('login') }}" class="login-link">Ingreso</a>
+                <a href="{{ url_for('subir') }}" class="upload">Subir publicaciones</a>
+                <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey">
+                    <button class="BtnFace">
+                        <span class="svgContainer">
+                            <svg viewBox="0 0 320 512" height="1.3em" xmlns="http://www.w3.org/2000/svg" class="svgIcon" fill="white">
+                                <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path>
+                            </svg>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+                <a href="https://www.instagram.com/asoc.sanjuaninadehockey">
+                    <button class="BtnIg">
+                        <span class="svgContainer">
+                            <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                        </span>
+                        <span class="BG"></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <img src="{{url_for('static',filename='/imagen/fondo1-removebg-preview.png')}}" alt="Hockey Logo">
+        <h1>Asociación Sanjuanina de hockey sobre césped y pista</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('directivos') }}">Directivos</a></li>
+                <li><a href="{{ url_for('agenda') }}">Agenda</a></li>
+                <li><a href="{{ url_for('galerias') }}">Galerías</a></li>
+                <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="autoplay" data-slick='{"slidesToShow": 5, "slidesToScroll": 2}'>
+        <div><a href="https://www.instagram.com/cauceterugbyclub/?hl=es-la"><img src="/static/equipos/caucete-removebg-preview.png" alt=""><span class="tooltip">Caucete Rugby Club</span></a></div>
+        <div><a href="https://www.instagram.com/barrealhockeyclub/"><img src="/static/equipos/barreal-removebg-preview.png" alt=""><span class="tooltip">Barreal Hockey Club</span></a></div>
+        <div><a href="https://www.instagram.com/club_amancay/"><img src="/static/equipos/descarga.png" alt=""><span class="tooltip">Club Amancay</span></a></div>
+        <div class="cesap">
+            <div><a href="https://www.instagram.com/cesap_hockey/"><img src="/static/equipos/CESAP.jpg" alt=""><span class="tooltip">CESAP Hockey Club</span></a></div>
+        </div>
+        <div><a href="https://www.instagram.com/cooperativajustocastro/"><img src="/static/equipos/cooperativa-removebg-preview.png" alt=""><span class="tooltip">Cooperativa Justo Castro</span></a></div>
+        <div><a href="https://www.instagram.com/clubhuazihul/"><img src="/static/equipos/huazihul-removebg-preview.png" alt=""><span class="tooltip">Club Huazihul</span></a></div>
+        <div><a href="https://www.instagram.com/jockeysjrc/?hl=es"><img src="/static/equipos/jockey-removebg-preview.png" alt=""><span class="tooltip">Jockey SJ Rugby Club</span></a></div>
+        <div><a href="https://www.facebook.com/unsjrugbyclub/?locale=es_LA"><img src="/static/equipos/U-removebg-preview.png" alt=""><span class="tooltip">Universidad San Juan</span></a></div>
+        <div><a href="https://www.instagram.com/lomas_rivadavia/"><img src="/static/equipos/lomas-removebg-preview.png" alt=""><span class="tooltip">Lomas de Rivadavia</span></a></div>
+        <div><a href="https://www.instagram.com/richetyzapata/"><img src="/static/equipos/richet_zapata-removebg-preview.png" alt=""><span class="tooltip">Richet Zapata</span></a></div>
+        <div><a href="https://sanjuanrugbyclub.wordpress.com/"><img src="/static/equipos/san_juan_rugby_club-removebg-preview.png" alt=""><span class="tooltip">San Juan Rugby Club</span></a></div>
+        <div><a href="https://www.instagram.com/udaphockeyclub_"><img src="/static/equipos/udap-removebg-preview.png" alt=""><span class="tooltip">U.D.A.P. Hockey Club</span></a></div>
+        <div><a href="https://www.instagram.com/universitariohsj/"><img src="/static/equipos/Universitario_-removebg-preview.png" alt=""><span class="tooltip">Universitario Rugby y Hockey Club</span></a></div>
+        <div><a href="http://uvtsj.com/disciplinas/hockey-patines/"><img src="/static/equipos/uvt-removebg-preview.png" alt=""><span class="tooltip">UVT Hockey Club</span></a></div>
+        <div class="alfiles">
+            <div><a href="https://www.facebook.com/SCAlfiles"><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""><span class="tooltip">Sporting Club Alfiles</span></a></div>
+        </div>
+    </div>
+    
+    <div class="Contacto">Subir Fotos y Noticias</div>
+    <div class="load">
+        <form method="post" enctype="multipart/form-data">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="contenido">Fecha:</label>
+            <textarea id="contenido" name="contenido" required></textarea>
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url">
+            <button type="submit">Subir</button>
+        </form>        
+    </div>
+    <div class="Contacto">Eliminar noticias </div>
+    <div class="cleanse">
+        {% for news_item in news_items %}
+        <div class="news-item">
+            <h2>{{ news_item.titulo }}</h2>
+            <p>{{ news_item.contenido }}</p>
+            <img src="{{ url_for('static', filename='upload/' + news_item.imagen) }}" alt="Imagen de Noticia">
+            <!-- Formulario para eliminar la noticia -->
+            <form action="{{ url_for('eliminar_noticia', id=news_item.id) }}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="bottom-bar">
+        <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
+        <div class="copyright">
+            <p>&copy;Asociación Sanjuanina de hockey sobre césped y pista 2024. Todos los derechos reservados.</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{{url_for('static',filename='js/funcionDate.js')}}"></script>
 </body>
 </html>

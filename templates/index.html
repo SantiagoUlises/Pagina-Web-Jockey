@@ -16,6 +16,8 @@
         <div class="top-bar">
             <div class="fecha" id="fecha"></div>
             <div class="links">
+                <a href="{{ url_for('login') }}" class="login-link">Ingreso</a>
+                <a href="{{ url_for('subir') }}" class="upload">Subir publicaciones</a>
                 <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey">
                     <button class="BtnFace">
                         <span class="svgContainer">
@@ -47,9 +49,7 @@
                 <li><a href="{{ url_for('agenda') }}">Agenda</a></li>
                 <li><a href="{{ url_for('galerias') }}">Galerías</a></li>
                 <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
-                <li><a href="{{ url_for('login') }}">Ingreso</a></li>
-                <li><a href="{{ url_for('registro')}}">Registrar</a></li>
-                <li><a href="{{ url_for('subir')}}">Agregar</a></li>
+
             </ul>
         </nav>
     </div>
@@ -74,38 +74,24 @@
             <div><a href="https://www.facebook.com/SCAlfiles"><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""><span class="tooltip">Sporting Club Alfiles</span></a></div>
         </div>
     </div>
+    <div class="Contacto">Noticias</div>
     <div class="mostrar">
-        <div class="item large">
-            <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey/posts/887616273399114?ref=embed_post">
-            <img src="{{url_for('static',filename='imagen/ganadoras.jpg')}}">
-            <div class="caption">San Juan RC campeonas de primera division</div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey/posts/pfbid02XTdwUdoDo4dg1n7sFKMBoGj6RmXG7NCFzxox5ctxpNDHbYJSYjY9ysR8hnHR1YaMl">
-            <img src="{{url_for('static',filename='imagen/juegolomasvsrichet.jpg')}}">
-            <div class="caption">Final de reserva entre Lomas negro Club y Richet zapata Club</div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="https://www.facebook.com/photo/?fbid=887509803409761&set=a.426298792864200">
-            <img src="{{url_for('static',filename='imagen/goleadores.jpg')}}">
-            <div class="caption">Rocio Noguera y Luciana Valenzuela goleadoras en el partido que Universidad gano ante Huazihul, Categoria Sub 16</div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey/posts/pfbid0BsJns6gPYDuhYJU5SNrjS7JLDehNL8Vg4UAQaQgVWMifpFYRZ9QasdVPKkHj6L8Ll">
-            <img src="{{url_for('static',filename='imagen/sub14.jpg')}}">
-            <div class="caption">Final categoria Sub 14 A. Universidad gano por penales a Huazihul</div>
-            </a>
-        </div>
-        <div class="item">
-            <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey/posts/pfbid0EGYswVy3DGAfK7WsXiD2tLBUcnYCnxn2RTaW4mgBUNNpZwTPVrVFXXX5YYn8gzXsl">
-            <img src="{{url_for('static',filename='imagen/final.jpg')}}">
-            <div class="caption">San Juan RC Campeonas del Torneo Apertura 2024 </div>
-            </a>
-        </div>
+        {% for noticia in noticias %}
+            <div class="item {% if loop.index == 1 %}large{% endif %}">
+                {% if noticia['imagen'] %}
+                    <img src="{{ url_for('static', filename='uploads/' + noticia['imagen'].replace('\\', '/')) }}" alt="Imagen de la noticia">
+                {% endif %}
+                <div class="caption">
+                    <h3>{{ noticia['titulo'] }}</h3>
+                    <p>{{ noticia['contenido'] }}</p>
+                    {% if noticia['url'] %}
+                    <a href="{{ noticia['url'] }}" target="_blank">Leer más</a>
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
     </div>
+    
 
     <div class="federacion">
             <a href="https://www.cahockey.org.ar/">
@@ -115,24 +101,11 @@
     <div class="bottom-bar">
         <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
         <div class="copyright">
-            Copyright © 2024 Asociación Sanjuanina de hockey sobre césped y pista
+            <p>&copy;Asociación Sanjuanina de hockey sobre césped y pista 2024. Todos los derechos reservados.</p>
         </div>
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{{url_for('static',filename='js/slick/slick.min.js')}}"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.autoplay').slick|({
-                slidesToShow: 5,
-                slidesToScroll: 2,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                variableWidth: true,
-                infinity: true
-            });
-        });
-    </script>
     <script src="{{url_for('static',filename='js/funcionDate.js')}}"></script>
 </body>
 </html>

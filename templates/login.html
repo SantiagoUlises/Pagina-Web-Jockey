@@ -16,6 +16,8 @@
         <div class="top-bar">
             <div class="fecha" id="fecha"></div>
             <div class="links">
+                <a href="{{ url_for('login') }}" class="login-link">Ingreso</a>
+                <a href="{{ url_for('subir') }}" class="upload">Subir publicaciones</a>
                 <a href="https://www.facebook.com/AsociacionSanjuaninaDeHockey">
                     <button class="BtnFace">
                         <span class="svgContainer">
@@ -47,7 +49,6 @@
                 <li><a href="{{ url_for('agenda') }}">Agenda</a></li>
                 <li><a href="{{ url_for('galerias') }}">Galerías</a></li>
                 <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
-                <li><a href="{{ url_for('login') }}">Ingreso</a></li>
             </ul>
         </nav>
     </div>
@@ -72,6 +73,7 @@
             <div><a href="https://www.facebook.com/SCAlfiles"><img src="/static/equipos/alfiles-removerbg-preview.png" alt=""><span class="tooltip">Sporting Club Alfiles</span></a></div>
         </div>
     </div>
+    <div class="login-form">
     <form method="post">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
@@ -79,10 +81,11 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Iniciar Sesión</button>
     </form>
+    </div>
     <footer class="bottom-bar">
         <img src="{{url_for('static',filename='imagen/fondo1-removebg-preview.png')}}" alt="Logo Asociación" class="logo">
         <div class="copyright">
-            Copyright © 2024 Asociación Sanjuanina de hockey sobre césped y pista
+            <p>&copy;Asociación Sanjuanina de hockey sobre césped y pista 2024. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

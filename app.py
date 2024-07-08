@@ -1,15 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session
-import mysql.connector
+import pymysql
 import os
+
+import pymysql.cursors
 app = Flask(__name__)
 app.secret_key = 'secret'
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static/uploads')
 def get_db_connection():
-    return mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='uliseskapo98@',
-        database='common',
-    )
+    conn=pymysql.connect(host='localhost',   
+                                user='root',
+                                password='uliseskapo98@',
+                                database='common',
+                                charset='utf8mb4',
+                                cursorclass=pymysql.cursors.DictCursor)
+    return conn
 
 @app.route('/')
 def inicio():
@@ -82,21 +86,44 @@ def subir():
     if request.method == 'POST':
         titulo = request.form['titulo']
         contenido = request.form['contenido']
+        url = request.form.get('url', '')
+
         imagen = request.files['imagen']
 
         imagen_filename = None
         if imagen:
-            imagen_filename = os.path.join('static/uploads', imagen.filename)
-            imagen.save(imagen_filename)
+            imagen_filename = imagen.filename
+            imagen_filename = imagen_filename.replace("/", "\\")  # Convertir barras diagonales a barras invertidas
+            imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], imagen_filename))
         
-        conn= get_db_connection()
-        cursor=conn.cursor()
-        cursor.execute('INSERT INTO noticias (titulo , contenido , imagen) VALUES (%s, %s, %s)',(titulo,contenido,imagen_filename))
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO noticias (titulo, contenido, imagen, url) VALUES (%s, %s, %s, %s)', (titulo, contenido, imagen_filename, url))
         conn.commit()
         cursor.close()
         conn.close()
         return redirect(url_for('inicio'))
-    return render_template('subir.html')
+
+    # Obtener las noticias de la base de datos y pasarlas a la plantilla
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT id, titulo, contenido, imagen, url FROM noticias')
+    news_items = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render_template('subir.html', news_items=news_items)
+
+
+
+@app.route('/eliminar/<int:id>', methods=['POST'])
+def eliminar_noticia(id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM noticias WHERE id = %s', (id,))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return redirect(url_for('subir'))  # Redirigir a la página de subir después de eliminar
 
 if __name__ == '__main__':
     app.run(debug=True)
